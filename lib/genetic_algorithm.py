@@ -1,6 +1,6 @@
 import random
 import numpy as np
-from config import GRID_SIZE
+from lib.config import GRID_SIZE
 
 POPULATION_SIZE = 50
 GENES_LENGTH = None
