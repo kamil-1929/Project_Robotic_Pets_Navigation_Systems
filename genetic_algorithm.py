@@ -66,3 +66,4 @@ def genetic_algorithm(initial_path, start, goal, static_obstacles, dynamic_obsta
 
     return best_individual, best_fitness
 
+

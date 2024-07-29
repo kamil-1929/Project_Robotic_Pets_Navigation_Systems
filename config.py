@@ -14,4 +14,4 @@ def generate_obstacles(grid_size, start_pos, goal_pos, num_obstacles):
     return list(obstacles)
 
 STATIC_OBSTACLES = generate_obstacles(GRID_SIZE, START_POS, GOAL_POS, NUM_STATIC_OBSTACLES)
-DYNAMIC_OBSTACLES = []  # Dynamic obstacles can be added similarly if needed
+DYNAMIC_OBSTACLES = []

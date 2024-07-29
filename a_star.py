@@ -46,3 +46,4 @@ def a_star_search(start, goal, grid):
                 heapq.heappush(oheap, (fscore[neighbor], neighbor))
 
     return False
+
