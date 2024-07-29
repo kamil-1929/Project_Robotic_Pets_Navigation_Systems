@@ -1,6 +1,6 @@
 import unittest
-from reinforcement_learning import train_rl_agent, evaluate_rl_agent
-from config import GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES
+from lib.reinforcement_learning import train_rl_agent, evaluate_rl_agent
+from lib.config import GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES
 
 class TestReinforcementLearning(unittest.TestCase):
     def test_train_rl_agent(self):
