@@ -1,5 +1,5 @@
 import unittest
-from visualize import visualize_paths
+from lib.visualize import visualize_paths
 
 class TestVisualize(unittest.TestCase):
     def test_visualize_paths(self):
