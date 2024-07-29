@@ -1,5 +1,5 @@
 import unittest
-from a_star import a_star_search
+from lib.a_star import a_star_search
 import numpy as np
 
 class TestAStar(unittest.TestCase):
