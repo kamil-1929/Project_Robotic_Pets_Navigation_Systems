@@ -21,6 +21,7 @@ def a_star_search(start, goal, grid):
             while current in came_from:
                 path.append(current)
                 current = came_from[current]
+            path.append(start)  # Ensure the start position is included
             return path[::-1]
 
         close_set.add(current)
