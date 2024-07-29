@@ -1,8 +1,8 @@
-from config import *
-from a_star import a_star_search
-from genetic_algorithm import genetic_algorithm
-from reinforcement_learning import train_rl_agent, evaluate_rl_agent
-from visualize import visualize_paths
+from lib.config import *
+from lib.a_star import a_star_search
+from lib.genetic_algorithm import genetic_algorithm
+from lib.reinforcement_learning import train_rl_agent, evaluate_rl_agent
+from lib.visualize import visualize_paths
 import numpy as np
 
 if __name__ == "__main__":
