@@ -67,7 +67,7 @@ def train_rl_agent(grid_size, start_pos, goal_pos, static_obstacles, dynamic_obs
         state = env.reset()
         done = False
         step_count = 0
-        while not done and step_count < 200:  # Add a step limit to avoid infinite loops
+        while not done and step_count < 200:  
             if random.random() < epsilon:
                 action = env.action_space.sample()
             else:

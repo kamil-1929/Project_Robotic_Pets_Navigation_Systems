@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from lib.config import GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES, DYNAMIC_OBSTACLES
+import os
+from config import GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES, DYNAMIC_OBSTACLES
 
 def visualize_paths(initial_path, refined_path, final_path):
     grid = np.zeros((GRID_SIZE, GRID_SIZE))
@@ -42,5 +43,11 @@ def visualize_paths(initial_path, refined_path, final_path):
     plt.scatter(GOAL_POS[1], GOAL_POS[0], c='red', s=100, label='Goal')
     plt.legend()
 
-    plt.savefig('outputs/visualizations/paths.png')
+    # Ensure the directory exists
+    output_dir = os.path.join(os.path.dirname(__file__), '..', 'outputs', 'visualizations')
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Save the figure
+    output_path = os.path.join(output_dir, 'paths.png')
+    plt.savefig(output_path)
     plt.show()

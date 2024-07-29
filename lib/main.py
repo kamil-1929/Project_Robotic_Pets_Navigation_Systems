@@ -1,8 +1,8 @@
-from lib.config import *
-from lib.a_star import a_star_search
-from lib.genetic_algorithm import genetic_algorithm
-from lib.reinforcement_learning import train_rl_agent, evaluate_rl_agent
-from lib.visualize import visualize_paths
+from config import *
+from a_star import a_star_search
+from genetic_algorithm import genetic_algorithm
+from reinforcement_learning import train_rl_agent, evaluate_rl_agent
+from visualize import visualize_paths
 import numpy as np
 
 if __name__ == "__main__":
@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     # Refine the path using Genetic Algorithm
     refined_path, best_fitness = genetic_algorithm(initial_path, START_POS, GOAL_POS, STATIC_OBSTACLES, DYNAMIC_OBSTACLES)
-    print("Refined Path (GA):", refined_path)
+    print("Refined Path (Genetic Algorithm):", refined_path)
     print("Best Fitness:", best_fitness)
 
     # Train the Reinforcement Learning agent and get Q-values
@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     # Evaluate the RL agent and get the final path
     final_path = evaluate_rl_agent(GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES, DYNAMIC_OBSTACLES)
-    print("Final Path (RL):", final_path)
+    print("Final Path (Reinforcement Learning):", final_path)
 
     # Visualize the paths
     visualize_paths(initial_path, refined_path, final_path)
