@@ -13,10 +13,10 @@ def generate_individual(initial_path):
 def generate_population(size, initial_path):
     return [generate_individual(initial_path) for _ in range(size)]
 
-def fitness(individual, start, goal, static_obstacles):
+def fitness(individual, start, goal, static_obstacles, dynamic_obstacles):
     if len(individual) == 0 or individual[-1] != goal:
         return float('-inf')
-    collisions = sum([1 for pos in individual if pos in static_obstacles])
+    collisions = sum([1 for pos in individual if pos in static_obstacles or pos in dynamic_obstacles])
     path_length = len(individual)
     discontinuities = sum([1 for i in range(1, len(individual)) if abs(individual[i][0] - individual[i-1][0]) + abs(individual[i][1] - individual[i-1][1]) > 1])
     return max(0, -collisions - path_length - discontinuities * 10)  # Ensure non-negative fitness
@@ -26,6 +26,8 @@ def selection(population, fitnesses):
     return [population[i] for i in indices[:POPULATION_SIZE]]
 
 def crossover(parent1, parent2):
+    if len(parent1) < 2 or len(parent2) < 2:
+        return parent1, parent2
     point = random.randint(1, min(len(parent1), len(parent2)) - 2)
     child1 = parent1[:point] + parent2[point:]
     child2 = parent2[:point] + parent1[point:]
@@ -48,7 +50,7 @@ def genetic_algorithm(initial_path, start, goal, static_obstacles, dynamic_obsta
     best_fitness = -float('inf')
 
     for generation in range(GENERATIONS):
-        fitnesses = [fitness(ind, start, goal, static_obstacles) for ind in population]
+        fitnesses = [fitness(ind, start, goal, static_obstacles, dynamic_obstacles) for ind in population]
         best_fitness = max(fitnesses)
         best_individual = population[fitnesses.index(best_fitness)]
 
@@ -65,6 +67,8 @@ def genetic_algorithm(initial_path, start, goal, static_obstacles, dynamic_obsta
         print(f"Generation {generation + 1}: Best Fitness = {best_fitness}")
 
     return best_individual, best_fitness
+
+
 
 
 

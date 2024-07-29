@@ -22,7 +22,7 @@ def visualize_paths(initial_path, refined_path, final_path):
     plt.legend()
 
     plt.subplot(1, 3, 2)
-    plt.title("Refined Path (GA)")
+    plt.title("Refined Path Genetic Algorithm (GA)")
     grid_with_path = np.copy(grid)
     for pos in refined_path:
         grid_with_path[pos[0], pos[1]] = 0.5
@@ -33,7 +33,7 @@ def visualize_paths(initial_path, refined_path, final_path):
     plt.legend()
 
     plt.subplot(1, 3, 3)
-    plt.title("Final Path (RL)")
+    plt.title("Final Path Reinforcement Learning (RL)")
     grid_with_path = np.copy(grid)
     for pos in final_path:
         grid_with_path[pos[0], pos[1]] = 0.5
