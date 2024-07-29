@@ -1,5 +1,5 @@
 import unittest
-from config import generate_obstacles, GRID_SIZE, START_POS, GOAL_POS
+from lib.config import generate_obstacles, GRID_SIZE, START_POS, GOAL_POS
 
 class TestConfig(unittest.TestCase):
     def test_generate_obstacles(self):
