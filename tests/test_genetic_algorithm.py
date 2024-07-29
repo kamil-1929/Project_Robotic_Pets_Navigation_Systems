@@ -1,6 +1,6 @@
 import unittest
-from genetic_algorithm import genetic_algorithm
-from config import GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES
+from lib.genetic_algorithm import genetic_algorithm
+from lib.config import GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES
 
 class TestGeneticAlgorithm(unittest.TestCase):
     def test_genetic_algorithm(self):
