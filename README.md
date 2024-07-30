@@ -17,17 +17,6 @@ The A* algorithm is a popular pathfinding and graph traversal algorithm. It is u
 3. **Cost Calculation**: The total cost function `f(n) = g(n) + h(n)` combines the cost to reach the current node `g(n)` and the heuristic estimate `h(n)`.
 4. **Pathfinding**: The algorithm explores nodes based on the lowest total cost, updating the path until the goal is reached.
 
-### Genetic Algorithm Implementation
-The Genetic Algorithm (GA) is used to refine the initial path found by the A* algorithm. GA is an evolutionary algorithm that mimics the process of natural selection.
-
-**Approach:**
-1. **Population Initialization**: A population of potential solutions (paths) is generated based on the initial path from A*.
-2. **Fitness Function**: Each path is evaluated based on the number of collisions with obstacles and the path length.
-3. **Selection**: The best-performing paths are selected for reproduction.
-4. **Crossover**: Selected paths are combined to create offspring with potentially better performance.
-5. **Mutation**: Small random changes are introduced to offspring paths to maintain diversity.
-6. **Evolution**: The process iterates for multiple generations to improve path efficiency and obstacle avoidance.
-
 ### Reinforcement Learning Implementation
 Reinforcement Learning (RL) is employed to dynamically adapt the refined path to handle changes in the environment, especially dynamic obstacles.
 
@@ -42,19 +31,15 @@ The overall approach integrates the strengths of A*, GA, and RL to create a robu
 
 **Workflow:**
 1. **Initial Pathfinding**: Use A* to find a quick initial path from the start to the goal, avoiding static obstacles.
-2. **Path Refinement**: Apply GA to refine the initial path, optimizing for obstacle avoidance and path efficiency.
-3. **Dynamic Adaptation**: Utilize RL to adapt the refined path in real-time, handling dynamic changes in the environment.
+2. **Path Refinement** and **Dynamic Adaptation**: Utilize RL to adapt the refined path in real-time, handling dynamic changes in the environment.
 
 **Example Workflow:**
 1. **Initial Path (A*)**:
     - Start: (0, 0)
     - Goal: (9, 9)
     - Obstacles: [(1, 2), (2, 2), (3, 2), (4, 2), (5, 5), (6, 6), (7, 7), (8, 8)]
-2. **Refined Path (GA)**:
-    - Population Size: 50
-    - Mutation Rate: 0.1
-    - Generations: 100
-3. **Dynamic Adaptation (RL)**:
+
+2. **Dynamic Adaptation (RL)**:
     - Q-learning parameters: α = 0.1, γ = 0.99, ε = 0.1
     - Episodes: 1000
 
