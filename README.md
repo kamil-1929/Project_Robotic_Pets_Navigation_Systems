@@ -19,26 +19,26 @@ This project focuses on developing navigation systems for robotic pets using var
 
 ## Installation
 To install the required dependencies, run the following command:
-```bash
+```
 pip install -r requirements.txt
-
+```
 ## Usage
 
 1. Clone the repository:
-    ```bash
+    ```
     git clone <repository-url>
     ```
 2. Navigate to the project directory:
-    ```bash
+    ```
     cd x23233982-AIDM_Project_Robotic_Pets_Navigation_Systems-main
     ```
 3. Run the main script:
-    ```bash
+    ```
     python lib/main.py
     ```
 
 ## Project Structure
-```plaintext
+```
 x23233982-AIDM_Project_Robotic_Pets_Navigation_Systems-main/
 ├── .github/
 │   └── workflows/
@@ -65,4 +65,4 @@ x23233982-AIDM_Project_Robotic_Pets_Navigation_Systems-main/
 ├── LICENSE
 ├── README.md
 └── requirements.txt
-
+```
