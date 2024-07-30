@@ -1,6 +1,5 @@
 from config import *
 from a_star import a_star_search
-from genetic_algorithm import genetic_algorithm
 from reinforcement_learning import train_rl_agent, evaluate_rl_agent
 from visualize import visualize_paths
 import numpy as np
@@ -18,17 +17,22 @@ if __name__ == "__main__":
     initial_path = a_star_search(START_POS, GOAL_POS, grid)
     print("Initial Path (A*):", initial_path)
 
-    # Refine the path using Genetic Algorithm
-    refined_path, best_fitness = genetic_algorithm(initial_path, START_POS, GOAL_POS, STATIC_OBSTACLES, DYNAMIC_OBSTACLES)
-    print("Refined Path (Genetic Algorithm):", refined_path)
-    print("Best Fitness:", best_fitness)
-
     # Train the Reinforcement Learning agent and get Q-values
     Q = train_rl_agent(GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES, DYNAMIC_OBSTACLES)
 
-    # Evaluate the RL agent and get the final path
-    final_path = evaluate_rl_agent(GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES, DYNAMIC_OBSTACLES)
-    print("Final Path (Reinforcement Learning):", final_path)
+    # Simulate dynamically changing paths
+    final_paths = []
+    for _ in range(10):  
+        DYNAMIC_OBSTACLES = generate_obstacles(GRID_SIZE, START_POS, GOAL_POS, NUM_STATIC_OBSTACLES)
+        final_path = evaluate_rl_agent(GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES, DYNAMIC_OBSTACLES)
+        final_paths.append(final_path)
 
-    # Visualize the paths
-    visualize_paths(initial_path, refined_path, final_path)
+    # Visualize the paths as a GIF and PNGs
+    last_frame_path, gif_path = visualize_paths(initial_path, final_paths, interval=1)
+    print(f"Visualization saved as GIF: {gif_path}")
+    print(f"Final Path Saved as PNG: {last_frame_path}")
+
+
+
+
+
