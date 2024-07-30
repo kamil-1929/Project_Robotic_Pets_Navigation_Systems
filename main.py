@@ -1,7 +1,7 @@
-from config import *
-from a_star import a_star_search
-from reinforcement_learning import train_rl_agent, evaluate_rl_agent
-from visualize import visualize_paths
+from lib.config import GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES, DYNAMIC_OBSTACLES
+from lib.a_star import a_star_search
+from lib.reinforcement_learning import train_rl_agent, evaluate_rl_agent
+from lib.visualize import visualize_paths
 import numpy as np
 
 if __name__ == "__main__":
@@ -20,17 +20,19 @@ if __name__ == "__main__":
     # Train the Reinforcement Learning agent and get Q-values
     Q = train_rl_agent(GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES, DYNAMIC_OBSTACLES)
 
-    # Simulate dynamically changing paths
+    # Evaluate the RL agent and get the final paths for multiple iterations
     final_paths = []
-    for _ in range(10):  
-        DYNAMIC_OBSTACLES = generate_obstacles(GRID_SIZE, START_POS, GOAL_POS, NUM_STATIC_OBSTACLES)
+    for _ in range(10):  # Assuming you want to capture 10 different states for the GIF
         final_path = evaluate_rl_agent(GRID_SIZE, START_POS, GOAL_POS, STATIC_OBSTACLES, DYNAMIC_OBSTACLES)
         final_paths.append(final_path)
+    print("Final Paths (Reinforcement Learning):", final_paths)
 
-    # Visualize the paths as a GIF and PNGs
-    last_frame_path, gif_path = visualize_paths(initial_path, final_paths, interval=1)
-    print(f"Visualization saved as GIF: {gif_path}")
-    print(f"Final Path Saved as PNG: {last_frame_path}")
+    # Visualize the paths
+    last_frame_path, gif_path = visualize_paths(initial_path, final_paths)
+    print(f"Last frame saved as: {last_frame_path}")
+    print(f"GIF saved as: {gif_path}")
+
+
 
 
 
