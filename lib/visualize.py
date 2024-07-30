@@ -53,7 +53,7 @@ def visualize_paths(initial_path, final_paths, interval=1):
         for filename in filenames:
             image = imageio.imread(filename)
             writer.append_data(image)
-            os.remove(filename)  # Remove the file after adding it to the GIF
+            os.remove(filename) 
 
     print(f"GIF saved as {gif_path}")
     print(f"Final frame saved as {last_frame_path}")
