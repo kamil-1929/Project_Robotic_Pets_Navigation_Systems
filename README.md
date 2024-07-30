@@ -3,6 +3,9 @@
 ## Overview
 This project focuses on developing navigation systems for robotic pets using various algorithms like A* search and Reinforcement Learning. The aim is to provide efficient and effective pathfinding solutions for robotic pets in different environments.
 
+![path_animation](https://github.com/user-attachments/assets/819c27bd-88a6-408d-a0ee-80a092c502c6)
+
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
