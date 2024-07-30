@@ -4,7 +4,7 @@ Project_AIDM_Robotics_Navigating
 # Robotic Navigation System
 
 ## Overview
-This project implements a navigation system for robotic pets using a combination of A* algorithm, Genetic Algorithm (GA), and Reinforcement Learning (RL). This hybrid approach ensures efficient initial pathfinding, refined obstacle avoidance, and dynamic adaptation to environmental changes.
+This project implements a navigation system for robotic pets using a combination of A* algorithm, and Reinforcement Learning (RL). This hybrid approach ensures efficient initial pathfinding, refined obstacle avoidance, and dynamic adaptation to environmental changes.
 
 ## Detailed Implementation and Approach
 
@@ -27,7 +27,7 @@ Reinforcement Learning (RL) is employed to dynamically adapt the refined path to
 4. **Policy Learning**: The agent updates its Q-values based on the received rewards, aiming to maximize cumulative rewards over time.
 
 ### Integration of Algorithms
-The overall approach integrates the strengths of A*, GA, and RL to create a robust navigation system.
+The overall approach integrates the strengths of A* and RL to create a robust navigation system.
 
 **Workflow:**
 1. **Initial Pathfinding**: Use A* to find a quick initial path from the start to the goal, avoiding static obstacles.
@@ -44,7 +44,7 @@ The overall approach integrates the strengths of A*, GA, and RL to create a robu
     - Episodes: 1000
 
 ## Conclusion
-The integration of A*, Genetic Algorithm, and Reinforcement Learning offers a powerful approach to optimizing robotic pets' navigation. This hybrid method ensures efficient initial pathfinding, refined obstacle avoidance, and dynamic adaptation to environmental changes. The provided toy dataset and experimental setup demonstrate the effectiveness of this approach, laying the foundation for further real-world applications and advancements in AI-driven robotic navigation systems.
+The integration of A* and Reinforcement Learning offers a powerful approach to optimizing robotic pets' navition. This hybrid method ensures efficient initial pathfinding, refined obstacle avoidance, and dynamic adaptation to environmental changes. The provided toy dataset and experimental setup demonstrate the effectiveness of this approach, laying the foundation for further real-world applications and advancements in AI-driven robotic navition systems.
 
 ## Installation
 
