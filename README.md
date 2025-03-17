@@ -1,3 +1,5 @@
+## This project was developed as part of my master's degree coursework. It serves as a practical implementation of concepts covered in my study module.
+
 # Robotic Pets Navigation Systems
 
 ## Overview
